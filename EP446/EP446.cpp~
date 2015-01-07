@@ -1,0 +1,51 @@
+#include<iostream>
+#include<primesieve.hpp>
+#include<vector>
+#include<utility>
+#include<cmath>
+#include<algorithm>
+#include<unordered_map>
+#include<set>
+#include<list>
+using namespace std;
+inline long multiplyModuloN(long x,long y,long moduloN)
+{
+	return ( ( x%moduloN ) * ( y%moduloN ) )%moduloN;
+}
+inline long addModuloN(long x,long y,long moduloN)
+{
+	return (  x  +  y) % moduloN;
+}
+long intExp(long a,long b,long acc)
+{
+	if(b==0)
+		return acc;
+	if(b%2==0)
+		return intExp(a*a,b/2,acc);
+	else
+		return intExp(a,b-1,acc*a);
+}
+pair<long,long> calcNextABk(long A,long B,long k,long h,long p)
+{
+	long C=( ( h * ( 1 + A*A ) )/intExp(p,k)) %p;
+	long A=A+C*intExp(p,k);
+	long B=intExp(p,k+1)-A;
+	return make_pair(A,B);
+}
+
+vector<unordered_map<long,long> > nSquaredPlusOneSieve(long maxNumber)
+{
+	vector<long> sieve(maxNumber+1);
+	for(unsigned long i=1;i<maxNumber+1;++i)
+		sieve[i]=i*i+1;
+
+	vector<unordered_map<long,long> > result;
+	long leftToDo=1;
+	long currDivisor=2;
+	while(leftToDo<maxNumber+1)
+	{
+		
+	}
+	
+	
+}
