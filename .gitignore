@@ -41,6 +41,7 @@ build/
 *.log
 *.vspscc
 *.vssscc
+*.dll
 .builds
 *.pidb
 *.log
